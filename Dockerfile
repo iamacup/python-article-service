@@ -11,7 +11,7 @@ COPY requirements.txt .
 RUN pip3 install -r requirements.txt
 
 # copy the content of the local src directory to the working directory
-COPY src/ .
+COPY src src
 
 # get NLTK
 RUN python3 -m nltk.downloader punkt
@@ -20,5 +20,5 @@ RUN python3 -m nltk.downloader punkt
 EXPOSE 5000
 
 # command to run on container start
-CMD [ "python", "./main.py" ] 
+CMD [ "python", "./src/main.py" ] 
 
